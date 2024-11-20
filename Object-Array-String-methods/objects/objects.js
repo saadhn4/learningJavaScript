@@ -1,91 +1,124 @@
-let details = {
-  firstName: "Saad",
+//Object methods
+
+//common built in methods
+
+//JS provides several built in methods, available through the global object
+
+//1. Object keys (objName) (here obj is obj ka naam)
+
+//returns an arrays of keys (property name) in the object
+
+let person = {
+  fname: "Saad", //fname and age are keys here
   age: 20,
-  college: "ISTTM",
 };
 
-let keysChecker = Object.keys(details);
+console.log(Object.keys(person));
 
-console.log(keysChecker); //firstname age college
+//2. Object.values (objName)
 
-//2. Object.values()
+//returns an array of the value in the object
 
-let valueChecker = Object.values(details);
-console.log(valueChecker);
+console.log(Object.values(person)); //prints saad and 20
 
-//3. Object.entries()
+//3. Object.entries (objName)
 
-let entryChecker = Object.entries(details);
-console.log(entryChecker);
+console.log(Object.entries(person)); //returns key and value in an array
 
-//4. Object.assign()
+//4. Object.assign (objName)
 
-//clones an object with another
+//this returns the object and clone the object with another
+
+//lets suppose i have 2 objects ; obj1 and obj 2
 
 let obj1 = {
-  x: 10,
-  y: 20,
+  a: 10,
+  b: 20,
 };
 
 let obj2 = {
-  z: 30,
+  c: 30,
 };
 
-console.log(Object.assign(obj1, obj2)); //prints x y z
-console.log(Object.assign(obj2, obj1)); //prints z x y
+console.log(Object.assign(obj1, obj2)); // this prints a b c in an object
+console.log(Object.assign(obj2, obj1)); //this prints c a b in an object
 
-//5. Object.create()
-//i have doubt in this
+//5. Object.create (objName)
 
-//6. Object.freeze()
-// In JS, Object.freeze will freeze the object or key:values pair ; so you cant add or edit anything further
+//It allows us to create new objects with a specified prototype object and optional addition properties.
+
+let actor = {
+  fname: "Shah Rukh Khan",
+  age: 53,
+};
+let hero = Object.create(actor);
+
+console.log(hero.fname); //DOUBT HEREEEE
+console.log(hero.age); //DOUBT HEREEEE
+
+//6. Object.freeze (objName)
+// In JS, Object.freeze will freeze the object or key:values pair ; sp you cant add or edit anything further
 
 let mall = {
-  name: "GVK",
-  location: "Hyd",
+  mallName: "GVK",
+  city: "HYD",
 };
 Object.freeze(mall);
-mall.parking = "underground";
-console.log(mall); //parking doesnt get added
+mall.location = "Banjara"; //this wont get added bc its frozen
+console.log(mall);
 
-//7. Object.isFrozen()
+//7. fromentry Object
 
-console.log(Object.isFrozen(mall)); //true
+//8. Object.is
 
-//8. Object.is ()
+//In JS, Object.is checks if 2 values are same or not
 
-//checks if 2 objects are same
+//here a and b both can also be considered as obkects
 
-//checks for datatype AND VALUE
+let a = "10";
+let b = 10;
 
-let a = "4";
-let b = 4;
-console.log(Object.is(a, b)); //false bc a is string
+console.log(Object.is(a, b)); //returns true or false value
 
-//9. Object.toString()
+//if i were to put one of them as string it would return false ; as it checks the datatype also
 
-//convers decimal to binary octal or hexa
+//9. Object.isFrozen (objName);
 
-let decimal = 10;
-let conversion = decimal.toString(2);
-console.log(conversion); //1010
+//checks if the object is actually frozen or not
 
-//10. Object.seal()
+console.log(Object.isFrozen(mall));
 
-let animals = {
-  type: "penguin",
-  quantity: 22,
+//10. Object.toString();
+
+//this converts a decimal number into binary,octal or hexadecimal {you have to specify it in ()}
+
+let number = 64;
+console.log(number.toString(2)); //this converts 64 to binary
+
+//11. Object.seal (objName);
+
+//you can update the EXISTING values (not keys) but you CANNOT add or delete anything.
+
+let cfi = {
+  insName: "Suhail",
+  age: 22,
 };
-Object.seal(animals);
+Object.seal(cfi);
+cfi.insName = "Fawaz"; //this changes suhail to fawaz
+console.log(cfi);
 
-//lets try adding smth to this
+//lets try adding smth
 
-animals.time = "55 years";
-console.log(animals); //doesnt get added
+cfi.gender = "male"; //this will not get added. Once u seal you cannot add or delete you can only update.
+console.log(cfi);
 
-//lets edit penguin into giraffe
+//12. Object.isSealed();
 
-animals.type = "giraffe";
-console.log(animals); //so it lets me update the value but not add anything else mmm
+//checks if object is sealed or not ; returns true or false.
 
-console.log(Object.isSealed(animals)); //true
+console.log(Object.isSealed(cfi)); //true
+
+function conversion(decimal, string) {
+  return console.log(decimal.toString(string));
+}
+conversion(10, 2); //this function returns 10's binary number.
