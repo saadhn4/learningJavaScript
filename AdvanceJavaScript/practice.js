@@ -154,56 +154,89 @@
 
 //function for displaying specific number backwards using recursion
 
-let display = (number) => {
-  if (number <= 0) {
-    return;
-  }
-  console.log(number);
-  return display(number - 1);
-};
-display(5);
+// let display = (number) => {
+//   if (number <= 0) {
+//     return;
+//   }
+//   console.log(number);
+//   return display(number - 1);
+// };
+// display(5);
 
-console.log("--------");
+// console.log("--------");
 
-let stopper = 5;
-let displayFront = (number) => {
-  if (number > stopper) {
-    return;
-  }
-  console.log(number);
-  return displayFront(number + 1);
-};
-displayFront(2);
+// let stopper = 5;
+// let displayFront = (number) => {
+//   if (number > stopper) {
+//     return;
+//   }
+//   console.log(number);
+//   return displayFront(number + 1);
+// };
+// displayFront(2);
 
-console.log("--------");
+// console.log("--------");
 
-let factorial = (number) => {
-  if (number == 0 || number == 1) {
-    return 1;
-  }
-  return number * factorial(number - 1);
-};
-console.log(factorial(5));
+// let factorial = (number) => {
+//   if (number == 0 || number == 1) {
+//     return 1;
+//   }
+//   return number * factorial(number - 1);
+// };
+// console.log(factorial(5));
 
-console.log("--------");
+// console.log("--------");
 
-let back = (n) => {
-  if (n <= 0) {
-    return;
-  }
-  console.log(n);
-  return back(n - 1);
-};
-back(5);
+// let back = (n) => {
+//   if (n <= 0) {
+//     return;
+//   }
+//   console.log(n);
+//   return back(n - 1);
+// };
+// back(5);
 
-console.log("--------");
+// console.log("--------");
 
-let printTill = 10;
-let front = (x) => {
-  if (x > printTill) {
-    return;
-  }
-  console.log(x);
-  return front(x + 1);
-};
-front(1);
+// let printTill = 10;
+// let front = (x) => {
+//   if (x > printTill) {
+//     return;
+//   }
+//   console.log(x);
+//   return front(x + 1);
+// };
+// front(1);
+
+// let obj = {
+//   name: "Omer",
+//   age: 17,
+// };
+
+// for (let i in obj) {
+//   console.log(i, obj[i]);
+// }
+
+// Hard 2: Write a program with a higher-order function that filters numbers greater than 10 from
+// an array:
+
+// let arr = [1, 10, 20, 3, 4, 5];
+
+// console.log(arr.filter((n) => n > 10));
+
+// function daysBetween(day1, day2) {
+//   let start = new Date(day1);
+//   let end = new Date(day2);
+//   let difference = end - start;
+//   let daysDifference = difference / (1000 * 3600 * 24);
+//   return Math.abs(daysDifference);
+// }
+
+// let day1 = "2024-11-19";
+// let day2 = "2024-11-20";
+
+// console.log(daysBetween(day1, day2));
+
+// let arr = [1, 2, 3, 4, 5];
+// let result = arr.map((x) => x * 2);
+// console.log(result);

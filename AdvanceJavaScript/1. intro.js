@@ -12,12 +12,3 @@
 //10. date and time
 //11. modules(import/export)
 //12. keywords and identifiers
-
-// ---------------------------------
-
-//Topics left:
-
-//1. callbacks
-//2. promises
-//3. async/await
-//4. import/export
