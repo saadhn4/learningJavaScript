@@ -5,7 +5,7 @@ let heads = (side) => {
     console.log("Coin is being flipped.... ");
     setTimeout(() => {
       if (side == "heads") {
-        resolve("It's heads!! 🪙");
+        resolve(`It's ${side}!! 🪙`);
       } else {
         reject("Are you sure this is a coin? ....");
       }
@@ -15,10 +15,10 @@ let heads = (side) => {
 
 let tails = (side2) => {
   return new Promise((resolve, reject) => {
-    console.log("Coin is being flipped.... ");
+    console.log("Coin is being flipped again.... ");
     setTimeout(() => {
       if (side2 == "tails") {
-        resolve("It's tails!! 🪙");
+        resolve(`It's ${side2}!! 🪙`);
       } else {
         reject("Are you sure this is a coin? ....");
       }
@@ -36,7 +36,7 @@ async function headsTails(side, side2) {
     let tailsFunction = await tails(side2);
     console.log(tailsFunction);
   } catch (error) {
-    console.log(`${error}`);
+    console.error(`${error}`);
   }
 }
 
